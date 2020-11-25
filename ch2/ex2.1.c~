@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+/* determine ranges of char, short, int, long,
+   both signed and unsigned
+   bonus: all float types */
+
+int main()
+{
+  /* char */
+  unsigned next = 0, last = 0;
+  /* going up */
+  next = last + 1;
+  while (next > last) {
+    last = next;
+    ++next;
+    printf("next: %c\n", next);
+  }
+  printf("biggest char: %c\n", next);
+}

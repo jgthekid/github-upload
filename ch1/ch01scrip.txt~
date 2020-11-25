@@ -1,0 +1,12 @@
+1.6test.c       testing character vs int conversion
+arrayCounter.c  count digits, whitespace, everything else
+arraymtxtest.c  matrix setup
+ch1testing.c    printf play plus range of ints
+charcount.c     count number of characters in input string/file
+comparison.c    some comparisons of floats
+ex1.12.c        prints input one word per line
+ex1.13.c        histogram of lengths of words (?? incorrect)
+ex1.13.redux.c  histogram of lengths of words ~fixed
+ex1.14.c        histogram of frequencies of characters
+ex1.15.c        temp conversion using more sophisticated function
+ex1.17.c        print input lines longer than N (hardcoded) characters

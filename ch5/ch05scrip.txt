@@ -1,0 +1,22 @@
+test.getint.c           loop executing getint p 96
+getint.c                get next integer from input into *pn 
+ex5.1.c                 as written, getint treats a + or - not followed by a digit as a valid representation of zero. fix it to push such a character back on the input.
+ex5.2.c                 write getfloat, the floating-point analog of getint
+test.strcpy.c           testing second strcpy given on p 105
+test.alloc.c            return pointer to n characters
+ex5.3.c                 write a pointer version of the function strcat that we showed in chapter 2: strcat(s,t) copies the string t to the end of s. 
+ex5.4.c                 write the function strend(s,t), which returns 1 if the string t occurs at the end of the string s, and zero otherwise. 
+test.recursion.c        what if we return a value inside a recursive function call?
+ex5.5.c                 write versions of the library functions strncpy, strncat, and strncmp.
+getLine.c               getLine: get line into s, return length, pointer version
+test.monthday.c         convert by day of the year to month and day, and vice versa; p 111 */
+ex5.8.c                 include error checking for day_of_year and month_day 
+test.monthday.c         convert by day of the year to month and day, and vice versa; p 111 
+ex5.9.c                 rewrite the routines day_of_year and month_day with pointers instead of indexing
+ex5.10.c                Write the program expr, which evaluates a reverse Polish expression from the command line, where each operator or operand is a separate argument
+test.find.c             revisit babygrep, p 116
+test.find2.c            extend find to take command line arguments, p 117
+ex5.13.c                unix-like toy tail program
+test.sort2.c            modified sort to include numeric sorting
+ex5.14.c                modify the sort program to handle a -r flag, which indicates sorting in reverse order. Be sure that -r works with -n. 
+ex5.15.c                Add (to sort program) the option -f to fold upper and lower case together, so that case distinctions are not made during sorting; for example, a and A compare equal. 

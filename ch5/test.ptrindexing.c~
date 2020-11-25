@@ -1,0 +1,20 @@
+#include <stdio.h> 
+#include <ctype.h> 
+#include <stdlib.h> /* for atof() */
+
+
+/* if we increment a pointer in a function will the pointer be advanced in main? */
+
+void plusplus(char *s) 
+{
+  s++;
+}
+
+int main()
+{
+  char s[] = "ummagumma";
+  printf("c",*s);
+  plusplus(s);
+  printf("c",*s);
+}
+

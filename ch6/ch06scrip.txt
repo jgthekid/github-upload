@@ -1,0 +1,4 @@
+test.countkeys.c        count occurrences of C keywords (in C program); pointer version, p 137
+test.countWords.c       count occurrences of each word of input
+ex6.3.c                 Write a cross-referencer that prints a list of all words in a document, and, for each word, a list of the line numbers on which it occurs. Remove noise words like "the", "and," and so on.
+ex6.4.c                 Write a program that prints the distinct words in its input sorted into decreasing order of frequency of occurrence

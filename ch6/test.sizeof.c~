@@ -1,0 +1,11 @@
+#include <stdio.h> 
+#include <ctype.h>
+#include <string.h>
+
+/* how do we know how big a general char[] is ? */
+
+int main()
+{
+  char s[];
+  printf("%d\n",sizeof(s));
+}

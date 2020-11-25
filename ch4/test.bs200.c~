@@ -1,0 +1,7 @@
+/* what is '\200' ? */
+
+int main()
+{
+  char x = '\200';
+  printf("%c \n", x);
+}

@@ -1,0 +1,4 @@
+
+/* play with #define */
+
+#define square((x)) x * x

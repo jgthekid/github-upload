@@ -1,0 +1,24 @@
+#include <ctype.h>
+#include <stdio.h>
+
+/* testing fourth strcpy given on p 106 */
+
+void STRCPY(char *s, char *t); //name conflict
+
+/* STRCPY: copy t to s; pointer version 3 */
+void STRCPY(char *s, char *t)
+{
+  while ((*s++ = *t++)) //c99 complains if only one set of ()
+    ;
+}
+
+int main()
+{
+  char sd[] = "wxyz";
+  char sc[] = "abcdefghi";
+
+  STRCPY(sd, sc);
+
+  printf("%s\n",sd);
+  printf("%s\n",sc); //why does this pointer no longer point to the beginning?
+}

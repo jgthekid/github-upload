@@ -1,0 +1,6 @@
+ex2.1.c         determine ranges of variable types
+test.strlen.c   test function strlen given in text
+testconst.c     testing const declaration
+testRel.c       testing relational operators
+test.atoi.c     testing atoi function given in sec2.7 p.43
+test.squeeze.c  testing the squeeze function given in sec 2.8 p47

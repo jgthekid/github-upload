@@ -1,0 +1,6 @@
+This directory holds my implementations and tests from reading K&R along with my solutions to exercises, 
+separated by chapter. 
+
+Each chapter dir has its own file chXXscrip.txt which briefly describes the exercises/programs. 
+
+

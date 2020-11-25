@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+/* testing some bitwise operators, see sec 2.9, p48 */
+
+int main()
+{ 
+  int i;
+  unsigned int x = 269; /* = 2^8 + 13 */
+  x = x & 0177; 
+  printf("%u\n",x);
+  x = ~0;
+  printf("%u\n",x);
+  x = 269;
+  x = ~x;
+  printf("%u\n",x);
+  int y = 0101;
+  printf("%d\n",y);
+  y = ~y;
+  printf("%d\n",y);
+
+  /* ~ appears to be flipping sign then subtracting 1, 
+     not what I expected */
+  
+}

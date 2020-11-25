@@ -1,0 +1,12 @@
+test.binsearch.c        testing binary search fnc given on p 58
+test.counter.c          count digits, white space, others - using case
+ex3.1.c                 alternate binary search fnc w 1 test inside loop
+test.atoi2.c            atoi: convert s to integer; version 2
+test.shellsort.c        testing sort function given p 62
+test.reverse.c          testing reverse function given p62
+ex3.3.c                 Write a function expand(s1,s2) that expands shorthand notations like a-z in the string s1 into the equivalent abc...xyz
+test.itoa.c             testing itoa (convert int to char[]) given on p 64
+test.itob.c             function to convert int to binary with all the bits
+ex3.4.c                 modify itoa() to handle -2^{N-1}
+ex3.5.c                 itob(n,s,b): convert int n into a base b character representation in the string s
+test.trim.c             trim: remove trailing blanks, tabs, newlines (illustrates break)

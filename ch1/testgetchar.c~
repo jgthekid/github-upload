@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+/* what if we repeat getchar() without putchar()? */
+
+int main() {
+  int c;
+  
+  c = getchar();
+  c = getchar();
+  putchar(c);
+  
+}
+  

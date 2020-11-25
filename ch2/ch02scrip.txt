@@ -1,0 +1,9 @@
+ex2.1.c         determine ranges of variable types
+test.strlen.c   test function strlen given in text
+testconst.c     testing const declaration
+testRel.c       testing relational operators
+test.atoi.c     testing atoi function given in sec2.7 p.43
+test.squeeze.c  testing the squeeze function given in sec 2.8 p47
+test.bitops.c   testing bitwise operators, see sec 2.9, p48, including getbits()
+ex2.6.c         write function setbits(x,p,n,y) that returns x ... p49
+

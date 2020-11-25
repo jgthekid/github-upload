@@ -1,0 +1,22 @@
+babygrep.c              find given string in given input 
+main.c                  main.c, getline, strindex culled from babygrep to test cc
+getLine.c               main.c, getline, strindex culled from babygrep to test cc
+strindex.c              main.c, getline, strindex culled from babygrep to test cc
+main2.c                 this second version used for testing ex4.1.c
+ex4.1.c                 write the function strrindex(s,t), which returns of the _rightmost_ occurrence of t in s, or -1 if there is none
+test.atof.c             testing string to float converter given p 71
+getLine.c               getLine: get line into s, return length (function only)
+atoi.c                  atoi: convert s to integer; version 2
+ex4.2.c                 extend atof to handle scientific notation of the form 123.45e-6 where a floating-point number may be followed by e or E and an optionally signed exponent 
+test.calc1.c            testing rudimentary calculator illustrating declaring float-returning function
+babyroot.c              babylon method for square root
+test.polish.c           testing reverse polish notation calculator (all in 1 file)
+ex4.3.c                 extend the calculator . add modulus (%) and provisions for negative numbers. see test.polish for original
+main.c                  main for reverse polish calculator
+getop2.c                exercise 4.11: modify getop sothat it doesn't need to use ungetch. Hint: use an internal static variable
+test.quicksort.c        testing quicksort function given p 87
+test.printd.c           testing printd function which prints an integer as string, using recursion. given p 87
+ex4.12.c                adapt the ideas of printd to write a recursive version of itoa
+ex4.13.c                recurseive version of reverse(s).
+ex4.14.c                define a macro swap(t,x,y) that interchanges two arguments of type t
+

@@ -1,0 +1,3 @@
+test.getint.c           loop executing getint p 96
+getint.c                get next integer from input into *pn 
+ex5.1.c                 as written, getint treats a + or - not followed by a digit as a valid representation of zero. fix it to push such a character back on the input.
