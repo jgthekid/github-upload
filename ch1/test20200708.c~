@@ -1,6 +1,0 @@
-#include <stdio.h>
-int main()
-{
-  /* testing division */
-  printf("20%5 = %d", 20%5);
-}

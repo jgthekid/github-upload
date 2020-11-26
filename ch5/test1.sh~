@@ -1,1 +1,0 @@
-for x in {1..100}; do c99 test.sort.c; cat rand.txt |./a.out >> rez1 ; done

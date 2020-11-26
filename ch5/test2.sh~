@@ -1,1 +1,0 @@
-c99 test.sort.c; cat rand.txt |./a.out > rez1

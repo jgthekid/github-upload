@@ -1,6 +1,0 @@
-bash-3.2$ pwd
-/Users/JWG/kr/ch2
-bash-3.2$ cd ..
-bash-3.2$ mkdir ch4
-bash-3.2$ cd ch4
-bash-3.2$ 
