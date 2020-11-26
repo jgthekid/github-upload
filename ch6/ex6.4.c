@@ -6,15 +6,17 @@
 /* Write a program that prints the distinct words in its input
  sorted into decreasing order of frequency of occurrence. */
 
-/* gather words into tree w/ counts like countWords, 
-   then build new tree from that one sorted on count 
+/* gather words into tree w/ counts like in countWords, 
+   then build array of pointers to tnodes,
+   then sort, then print
 */
 
 /* 
    NOTE: functions altered from countWords
 */
 
-#define MAXWORD 100
+#define MAXWORD 100 // max word length
+#define ARRLEN 10000 // max number of (unique) words
 
 /* struct defining node of binary tree holding words and their counts */
 struct tnode {  // the tree node
@@ -26,30 +28,41 @@ struct tnode {  // the tree node
 
 
 int getword(char *, int);
-struct tnode *taloc(void);
 char *STRDUP(char *);  // name conflict in string.h
-void treeprint(struct tnode *p);
+void treeprint(struct tnode *p[], int n);
 struct tnode *talloc(void);
 struct tnode *addtree(struct tnode *p, char *w); 
+int treetransfer(struct tnode *t, struct tnode *p[]);
+void QSORT(void *v[], int left, int right, int (*comp)(void *, void*));
+int tcmp(struct tnode *t1, struct tnode *t2);
+void swap(void *v[], int i, int j);
 
 int main()
 {
-  struct tnode *root1;
+  struct tnode *root; 
   char word[MAXWORD];
+  int wordcount; // total number of words
+  struct tnode *treeptr[wordcount]; // pointers to tnodes  
 
-  root1 = NULL;
+  root = NULL;
+
 
   // parse input and count words
   while (getword(word, MAXWORD) != EOF)
-    if (isalpha(word[0]))
-      root1 = addtree(root1, word);
+    if (isalpha(word[0])) {
+      root = addtree(root, word);
+    }
+    
+  // create array of tnode pointers
+  wordcount = treetransfer(root, treeptr);
 
-  // sort by count
-  struct tnode *root2;
-  root2 = NULL;
-  treetransfer(root1, root2);
+  // sort array
+  QSORT((void **) treeptr, 0, wordcount-1, 
+        (int (*)(void*, void*))(tcmp) );
 
-  treeprint(root2);
+  //print 
+  treeprint(treeptr, wordcount);
+
   return 0;
 }
 
@@ -72,14 +85,23 @@ struct tnode *addtree(struct tnode *p, char *w)
   return p;
 }
 
-/* treeprint: in-order print of tree p */
-void treeprint(struct tnode *p)
+/* treetransfer: build array of pointers to tnodes */
+int treetransfer(struct tnode *t, struct tnode *p[])
 {
-  if (p != NULL) {
-    treeprint(p->left);
-    printf("%4d %s\n", p->count, p->word);
-    treeprint(p->right);
+  static int i = 0; // track # of tnodes
+
+  if (t != NULL) {
+    treetransfer(t->left, p);
+    if (i < ARRLEN) {
+      p[i++] = t;
+    } else {
+      printf("too many words\n"); 
+      return 0;
+    }
+    // printf("%4d %s\n", t->count, t->word);
+    treetransfer(t->right, p);
   }
+  return i;
 }
 
 /* talloc: make a tnode */
@@ -97,15 +119,6 @@ char *STRDUP(char *s)  // make a duplicate of s
     strcpy(p, s);
   return p;
 }
-
-/* treetransfer: create tree sorted on count instead of alpha */
-void treetransfer(struct tnode *p1, struct tnode *p2)
-{
-  // parse p1 while filling p2
-  // testing some edits
-
-}
-                 
 
 /* getword: get next word or character from input */
 int getword(char *word, int lim)
@@ -129,4 +142,49 @@ int getword(char *word, int lim)
     }
   *w = '\0';
   return word[0];
+}
+
+
+/* QSORT: sort v[left]...v[right] into increasing order */
+void QSORT(void *v[], int left, int right, 
+           int (*comp)(void *, void*))
+{
+  int i, last;
+  //void swap(char *v[], int i, int j);
+
+  if (left >= right) 
+    return;
+  swap(v, left, (left+right)/2);
+  last = left;
+  for (i = left+1; i <= right; i++)
+    if ((*comp)(v[i], v[left]) < 0)
+      swap(v, ++last, i);
+  swap(v, left, last);
+  QSORT(v, left, last-1, comp);
+  QSORT(v, last+1, right, comp);
+}
+
+/* tcmp: compare tnodes based on count */
+int tcmp(struct tnode *t1, struct tnode *t2)
+{
+  return t2->count - t1->count;
+}
+
+/* swap: interchange v[i] and v[j] */
+void swap(void *v[], int i, int j)
+{
+  void *temp;
+
+  temp = v[i];
+  v[i] = v[j];
+  v[j] = temp;
+}
+
+/* treeprint: print tnodes from array of pointers */
+void treeprint(struct tnode *p[], int n) 
+{
+  int i = 0;
+
+  for (i = 0; i < n; i++)
+    printf("%d: %s\n", p[i]->count, p[i]->word);
 }
