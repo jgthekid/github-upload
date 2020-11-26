@@ -3,4 +3,4 @@ separated by chapter.
 
 Each chapter dir has its own file chXXscrip.txt which briefly describes the exercises/programs. 
 
-
+All programs compile with cc or c99. 
