@@ -7,8 +7,7 @@
  sorted into decreasing order of frequency of occurrence. */
 
 /* gather words into tree w/ counts like in countWords, 
-   then build array of pointers to tnodes,
-   then sort, then print
+   then build array of pointers to tnodes, then sort, then print
 */
 
 /* 
@@ -36,6 +35,7 @@ int treetransfer(struct tnode *t, struct tnode *p[]);
 void QSORT(void *v[], int left, int right, int (*comp)(void *, void*));
 int tcmp(struct tnode *t1, struct tnode *t2);
 void swap(void *v[], int i, int j);
+
 
 int main()
 {
