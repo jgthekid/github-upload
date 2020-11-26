@@ -101,7 +101,8 @@ char *STRDUP(char *s)  // make a duplicate of s
 /* treetransfer: create tree sorted on count instead of alpha */
 void treetransfer(struct tnode *p1, struct tnode *p2)
 {
-  while 
+  // parse p1 while filling p2
+  // testing some edits
 
 }
                  
