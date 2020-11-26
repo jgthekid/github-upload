@@ -8,6 +8,8 @@
 
 /* gather words into tree w/ counts like in countWords, 
    then build array of pointers to tnodes, then sort, then print
+   
+   requires getch.c
 */
 
 /* 
