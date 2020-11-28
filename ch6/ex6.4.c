@@ -17,7 +17,7 @@
 */
 
 #define MAXWORD 100 // max word length
-#define ARRLEN 10000 // max number of (unique) words
+#define ARRLEN 1000 // max number of (unique) words
 
 /* struct defining node of binary tree holding words and their counts */
 struct tnode {  // the tree node
@@ -44,7 +44,7 @@ int main()
   struct tnode *root; 
   char word[MAXWORD];
   int wordcount; // total number of words
-  struct tnode *treeptr[wordcount]; // pointers to tnodes  
+  struct tnode *treeptr[ARRLEN]; // pointers to tnodes  
 
   root = NULL;
 
