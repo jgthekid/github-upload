@@ -3,26 +3,25 @@
 #include <ctype.h>
 #include <string.h>
 
-/* Write a cross-referencer taht prints a list of all words in 
+/* Write a cross-referencer that prints a list of all words in 
 a document, and, for each word, a list of the line numbers on which it occurs. 
-Remove noise words like "the", "and," and so on.
 */
 
 /* borrows heavily from test.countWords.c 
-
-** NOTE: functions edited here so if borrowing for future use check against 
-versions in test.countWords.c 
 
 To do this, add an array to each tree node containing line# of each occurrence. 
 Also need to keep track of index of this array. 
 Seems like this will use alot of empty storage: need to allocate space for lots of 
 entries for each word. 
 
-One possibility would be to allow duplicate entries in the binary tree. 
+Another possibility would be to allow duplicate entries in the binary tree. 
 That would sort on word, then on line number, with the second sort coming 
 automatically since lines are sorted beforehand. 
 But wait what about printing?
 Im prob not gonna do this but that might be a nice idea. 
+
+** NOTE: functions edited here so if borrowing for future use check against 
+versions in test.countWords.c 
 */
 
 #define MAXWORD 100
@@ -33,8 +32,8 @@ struct tnode {  // the tree node
   char *word;   // points to the text
   int idx;   // current index in count array
   int lineArr[MAXCOUNT]; // line# of each occurrence
-  struct tnode *left; //left child
-  struct tnode *right; //right child
+  struct tnode *left; // left child
+  struct tnode *right; // right child
 };
 
 
@@ -71,7 +70,7 @@ struct tnode *addtree(struct tnode *p, char *w, int l)
     p->lineArr[p->idx] = l;
     p->left = p->right = NULL;
   } else if ((cond = strcmp(w, p->word)) == 0)
-    { // does not handle idx == MAXCOUNT case
+    { // does not error check idx == MAXCOUNT case
       if (p->lineArr[p->idx] != l) // repeated word on new line 
         p->lineArr[++p->idx] = l; 
     } // ignore repeated words on same line
